@@ -15,24 +15,40 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;
             grid-gap: 10px;
-            padding : 10px;           
+            padding : 10px;
         }
-        .backblock{            
+        .backblock{
             background-color: burlywood;
         }
+        .backblock2{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            width: 120px;
+            height: 120px;
+            background-color: rgb(252, 76, 76);
+            text-align: center;
+            line-height: 1.6;
+            font-size: 70;
+            border-radius: 15px;
+            
+
+        }
+        
     </style>
 
     <div id="app">
-        <div class="backblock" v-for="index in backblocks"></div>        
+        <div class="backblock" v-for="index in backblocks"></div>
+        <div class="backblock2" >2</div>
+
     </div>
 
-    
 
     <script>
         const {createApp} = Vue;
         createApp({
             data() {
-                return {                    
+                return {
                     backblocks : 16,
                 }
             },
@@ -40,6 +56,30 @@
                 console.log("app 마운트 성공!");
             },
         }).mount("#app");
+
+
+
+//         (function(){
+//   document.addEventListener('keydown', function(e){
+//     const keyCode = e.keyCode;
+//     console.log('pushed key ' + e.key);
+
+//     if(keyCode == 13){ // Enter key
+//       document.dispatchEvent(new KeyboardEvent('keydown', {key: 'e'}));
+//       // document.dispatchEvent(new KeyboardEvent('keyup', {key: 'e'}));
+//     } else if(keyCode == 9){ // Tab key
+//       document.dispatchEvent(new KeyboardEvent('keydown', {key: 't'}));
+//       // document.dispatchEvent(new KeyboardEvent('keyup', {key: 't'}));
+//     }
+//   })
+// })();
+
+function keylog(e){
+    console.log(e);
+}
+window.onkeydown = keylog;
+
+
     </script>    
 </body>
 </html>
