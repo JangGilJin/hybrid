@@ -19,8 +19,12 @@
         }
         .backblock{
             background-color: burlywood;
+            text-align: center;
+            line-height: 2;
+            font-size: 70;
+            
         }
-        .backblock2{
+        #backblock2{
             position: absolute;
             left: 30px;
             top: 30px;
@@ -38,8 +42,8 @@
     </style>
 
     <div id="app">
-        <div class="backblock" v-for="index in backblocks"></div>
-        <div class="backblock2" >2</div>
+        <div class="backblock" v-for="index in backblocks">1</div>
+        <div id="backblock2" >2</div>
 
     </div>
 
@@ -74,10 +78,38 @@
 //   })
 // })();
 
-function keylog(e){
-    console.log(e);
-}
-window.onkeydown = keylog;
+
+
+// function keylog(e){
+//     console.log(e);
+// }
+// window.onkeydown = keylog;
+
+
+
+(function () {
+  document.addEventListener("keydown", function (e) {
+    let key = e.keyCode;
+    let backblock2 = document.getElementById("backblock2");
+    let y = parseInt(backblock2.style.top || 0, 10);
+    let x = parseInt(backblock2.style.left || 0, 10);
+
+    if (key === 37 /* LEFT */) {
+        backblock2.style.left = x - 500 + "px";
+    }
+    if (key === 38 /* TOP */) {
+        backblock2.style.top = y - 500 + "px";
+    }
+    if (key === 39 /* RIGHT */) {
+        backblock2.style.left = x + 500 + "px";
+    }
+    if (key === 40 /* BOTTOM */) {
+        backblock2.style.top = y + 500 + "px";
+    }
+  });
+})();
+
+
 
 
     </script>    
