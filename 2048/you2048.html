@@ -8,8 +8,9 @@
     
     <style>
         #app{
-            width: 600px;
-            height: 600px;
+            position: relative;
+            width: 590px;
+            height: 590px;
             background-color: beige;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -26,8 +27,8 @@
         }
         #backblock2{
             position: absolute;
-            left: 30px;
-            top: 30px;
+            left: 20px;
+            top: 20px;
             width: 120px;
             height: 120px;
             background-color: rgb(252, 76, 76);
@@ -62,31 +63,29 @@
         }).mount("#app");
 
 
+//소스에 방향키 눌렀다는것 표시
+        (function(){
+  document.addEventListener('keydown', function(e){
+    const keyCode = e.keyCode;
+    console.log('pushed key ' + e.key);
 
-//         (function(){
-//   document.addEventListener('keydown', function(e){
-//     const keyCode = e.keyCode;
-//     console.log('pushed key ' + e.key);
+    if(keyCode == 13){ // Enter key
+      document.dispatchEvent(new KeyboardEvent('keydown', {key: 'e'}));
+      // document.dispatchEvent(new KeyboardEvent('keyup', {key: 'e'}));
+    } else if(keyCode == 9){ // Tab key
+      document.dispatchEvent(new KeyboardEvent('keydown', {key: 't'}));
+      // document.dispatchEvent(new KeyboardEvent('keyup', {key: 't'}));
+    }
+  })
+})();
 
-//     if(keyCode == 13){ // Enter key
-//       document.dispatchEvent(new KeyboardEvent('keydown', {key: 'e'}));
-//       // document.dispatchEvent(new KeyboardEvent('keyup', {key: 'e'}));
-//     } else if(keyCode == 9){ // Tab key
-//       document.dispatchEvent(new KeyboardEvent('keydown', {key: 't'}));
-//       // document.dispatchEvent(new KeyboardEvent('keyup', {key: 't'}));
-//     }
-//   })
-// })();
-
-
-
-// function keylog(e){
-//     console.log(e);
-// }
-// window.onkeydown = keylog;
+function keylog(e){
+    console.log(e);
+}
+window.onkeydown = keylog;
 
 
-
+//블록 움직이기
 (function () {
   document.addEventListener("keydown", function (e) {
     let key = e.keyCode;
@@ -95,20 +94,19 @@
     let x = parseInt(backblock2.style.left || 0, 10);
 
     if (key === 37 /* LEFT */) {
-        backblock2.style.left = x - 500 + "px";
+        backblock2.style.left = x - 450 + "px";
     }
     if (key === 38 /* TOP */) {
-        backblock2.style.top = y - 500 + "px";
+        backblock2.style.top = y - 450 + "px";
     }
     if (key === 39 /* RIGHT */) {
-        backblock2.style.left = x + 500 + "px";
+        backblock2.style.left = x + 450 + "px";
     }
     if (key === 40 /* BOTTOM */) {
-        backblock2.style.top = y + 500 + "px";
+        backblock2.style.top = y + 450 + "px";
     }
   });
 })();
-
 
 
 
