@@ -8,6 +8,8 @@
     
     <style>
         #app{
+           margin-top: 10%;
+           margin-left: 10%;
             position: relative;
             width: 590px;
             height: 590px;
@@ -19,16 +21,17 @@
             padding : 10px;
         }
         .backblock{
+            
             background-color: burlywood;
             text-align: center;
             line-height: 2;
             font-size: 70;
-            
         }
+
         #backblock2{
-            position: absolute;
-            left: 20px;
-            top: 20px;
+            position: absolute ;
+            left: mar + "px" ;
+            top: mar + "px";
             width: 120px;
             height: 120px;
             background-color: rgb(252, 76, 76);
@@ -36,20 +39,27 @@
             line-height: 1.6;
             font-size: 70;
             border-radius: 15px;
-            
 
         }
         
     </style>
 
     <div id="app">
-        <div class="backblock" v-for="index in backblocks">1</div>
+        <div class="backblock" v-for="index in backblocks"></div>
         <div id="backblock2" >2</div>
+        
 
     </div>
 
 
     <script>
+        var mar = 20;
+        var bb2 = document.getElementById("backblock2");
+        bb2.style.left = mar;
+        bb2.style.top = mar;
+
+
+
         const {createApp} = Vue;
         createApp({
             data() {
@@ -63,21 +73,21 @@
         }).mount("#app");
 
 
-//소스에 방향키 눌렀다는것 표시
-        (function(){
-  document.addEventListener('keydown', function(e){
-    const keyCode = e.keyCode;
-    console.log('pushed key ' + e.key);
+// //소스에 방향키 눌렀다는것 표시
+//         (function(){
+//   document.addEventListener('keydown', function(e){
+//     const keyCode = e.keyCode;
+//     console.log('pushed key ' + e.key);
 
-    if(keyCode == 13){ // Enter key
-      document.dispatchEvent(new KeyboardEvent('keydown', {key: 'e'}));
-      // document.dispatchEvent(new KeyboardEvent('keyup', {key: 'e'}));
-    } else if(keyCode == 9){ // Tab key
-      document.dispatchEvent(new KeyboardEvent('keydown', {key: 't'}));
-      // document.dispatchEvent(new KeyboardEvent('keyup', {key: 't'}));
-    }
-  })
-})();
+//     if(keyCode == 13){ // Enter key
+//       document.dispatchEvent(new KeyboardEvent('keydown', {key: 'e'}));
+//       // document.dispatchEvent(new KeyboardEvent('keyup', {key: 'e'}));
+//     } else if(keyCode == 9){ // Tab key
+//       document.dispatchEvent(new KeyboardEvent('keydown', {key: 't'}));
+//       // document.dispatchEvent(new KeyboardEvent('keyup', {key: 't'}));
+//     }
+//   })
+// })();
 
 function keylog(e){
     console.log(e);
@@ -92,21 +102,28 @@ window.onkeydown = keylog;
     let backblock2 = document.getElementById("backblock2");
     let y = parseInt(backblock2.style.top || 0, 10);
     let x = parseInt(backblock2.style.left || 0, 10);
+    
 
     if (key === 37 /* LEFT */) {
         backblock2.style.left = x - 450 + "px";
+      
     }
     if (key === 38 /* TOP */) {
         backblock2.style.top = y - 450 + "px";
+        console.log("uuu");
+    
     }
     if (key === 39 /* RIGHT */) {
         backblock2.style.left = x + 450 + "px";
+      
     }
     if (key === 40 /* BOTTOM */) {
         backblock2.style.top = y + 450 + "px";
+     
     }
   });
 })();
+
 
 
 
