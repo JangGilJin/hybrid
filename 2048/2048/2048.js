@@ -1,69 +1,82 @@
-// div 게임 판 배열
+// div 게임 판 배열 각각 16개로된 블록 불러오기
 var cellArr = document.getElementsByClassName("cell");
-// 숫자 배열
+// 숫자 배열 numArr에다가 16개의 배열
 var numArr = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 // 상하좌우 이동
+// 상하좌우 방향키 입력
 function moveNum(obj) {
     switch (obj.getAttribute("id")) {
-        case "ArrowUp":
-            up();
-            break; //up
-        case "ArrowDown":
-            down();
+        case "ArrowUp"://업 조건값
+            up();//up 동작
+            break; //up 
+        case "ArrowDown"://다운 조건값
+            down();//down 동작
             break; //down
-        case "ArrowLeft":
-            left();
+        case "ArrowLeft"://왼쪽 조건값
+            left();//left 동작
             break; //left
-        case "ArrowRight":
-            right();
+        case "ArrowRight"://오른쪽 조건값
+            right();//right 동작
             break; //right
     }
 }
 
 // 게임 초기화
 function init() {
+    // i 가 16이 될때까지 반복 i는 16개로된 블록 즉, 블록을16개 만드는 코드 만들어진 코드는 numArr에 배열에다가 배치
     for (var i = 0; i < 16; i++) {
         cellArr[i].innerHTML = "";
         numArr[i] = 0;
     }
+    //점수를 초기화 시키는 코드 게임이 초기화 되었을때 스코어를 0으로 만들어주는 코드
     var score = document.getElementById("score");
     score.innerHTML = 0;
-
+    //초기화
     randomNum();
     randomNum();
 }
 
 // 게임 시작
 function start() {
+    //html 에 있는 div intro 를 불러오는 코드
     document.getElementById("intro").style.display = 'none';
+    //html 에 있는 div gamearea를 불러오는 코드
     document.getElementById("gamearea").style.display = 'block';
+    //객체를 실행시키는 함수
     init();
 }
-
+// 게임을 끝내는 함수
 function end() {
+    //스코어와 베스트 스코어를 불러오는 함수 score라는 곳에다가 div score를 집어 넣는 코드
     var score = document.getElementById("score").innerHTML;
     var bestScore = document.getElementById("bestScore").innerHTML;
-
+    //score : 스코어 를 불러서 보여주는 코드
     alert("score : " + score);
-
+//만약 최대 스코어가 방금한 스코어보다 적다면
     if (parseInt(bestScore) < parseInt(score)) {
+        //베스트스코어로 불러옴
         localStorage.removeItem("2048_best_score");
+        //베스트 스코어 갱신
         localStorage.setItem("2048_best_score", score);
+        //베스트 스코어 불러오기
         document.getElementById("bestScore").innerHTML = score;
     }
-
-
-
-    document.getElementById("intro").style.display = 'block';
+    //intro 라는 div에 block 스타일 넣기
+     document.getElementById("intro").style.display = 'block';
+    //gamearea에다가 none스타일 넣기
     document.getElementById("gamearea").style.display = 'none';
+    //score에다가 0 넣는코드
     document.getElementById("score").innerHTML = "0";
 }
 // 숫자 랜덤 생성
+//16칸의 배열중에서 숫자를 랜덤으로 생성 한칸한칸
 function randomNum() {
+    //done에다가 false를 넣기
     var done = false;
+    // done이 false와 같을때 실행
     while (done == false) {
-        var num = Math.floor(Math.random() * 16);
+        var num = Math.floor(Math.random() * 3);
         if (numArr[num] == 0) {
             numArr[num] = getNewNum();
             done = true;
