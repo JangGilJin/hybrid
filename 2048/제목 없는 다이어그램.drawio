@@ -1,1 +1,27 @@
-<mxfile host="app.diagrams.net" modified="2022-12-10T03:53:06.145Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.6.2" etag="FhQ9MQ1RfRg_zG_rIBDq" type="github"><diagram id="yH0ylTA3g6s9H2Xs-U6j">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-12-10T03:55:28.048Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.6.2" etag="s4Me666tOdeKezlvI6Xw" type="github">
+  <diagram id="zML4q7B2FFyrVfHZDL33" name="페이지-1">
+    <mxGraphModel dx="1038" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dCzE_VP4LFdifVq9EV1c-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dCzE_VP4LFdifVq9EV1c-1" target="dCzE_VP4LFdifVq9EV1c-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dCzE_VP4LFdifVq9EV1c-1" value="게임 시작" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="80" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dCzE_VP4LFdifVq9EV1c-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dCzE_VP4LFdifVq9EV1c-2" target="dCzE_VP4LFdifVq9EV1c-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dCzE_VP4LFdifVq9EV1c-2" value="2 또는 4 숫자 &lt;br&gt;랜덤위치 2개 생성" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="140" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dCzE_VP4LFdifVq9EV1c-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
